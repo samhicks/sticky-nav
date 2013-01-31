@@ -3,19 +3,12 @@ Sticky Nav
 
 When a user has scrolled to a given point on a page, using jQuery, stick the nav (or any other element for that matter), to the top of the browser window.
 
-HTML
+Example Usage
 ----
 
-```html
-<!-- CSS -->
-<style type="text/css">
-	.sticky-nav {
-		position: fixed;
-		top: 0;
-	}
-</style>
+### HTML
 
-<!-- HTML -->
+```html
 <div data-role="hero">
 	<!-- Content here -->
 </div>
@@ -41,27 +34,26 @@ HTML
 		</a>
 	</li>
 </ul>
+```
 
-<!-- JQuery -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+### CSS
+
+```html
+<style type="text/css">
+	.sticky-nav {
+		position: fixed;
+		top: 0;
+	}
+</style>
+```
+
+### jQuery
+
+```html
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/sticky-nav.js"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
-
-		$(window).scroll(function(){
-		
-			var nav = $('[data-role="nav"]');
-			// Find height of the hero div
-			var heroHeight = $('[data-role="hero"]').innerHeight();
-			
-			// If the vertical position of the navigation is greater than or equal 
-			// to the height of the hero div add a class of sticky-nav
-			if($(this).scrollTop()>=heroHeight) {
-				nav.addClass('sticky-nav');
-			} else {
-				nav.removeClass('sticky-nav');
-			}
-		});
-	});
+    $('[data-role="sticky-nav"]').stickyNav();
 </script>
 ```
 
